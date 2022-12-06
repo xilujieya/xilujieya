@@ -1,0 +1,10 @@
+101    Alien    93
+101    Bob    86
+101    Green    91
+101    Frank    75
+101    Jim    84
+101    Nick    86
+101    Queen    90
+101    Simon    82
+101    Zane    72
+101    Mary    89

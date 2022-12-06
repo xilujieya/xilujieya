@@ -1,0 +1,57 @@
+The second paper on python: Natural Language processing of human-computer dialogue based on Python
+
+Abstract: This paper calls the third-party database jieba and TextBlob with rich functions of Python, and uses its powerful function methods to read the human-computer dialogue of science fiction literature stored in Text documents and the dialogue texts of Siri and Cleverbot and analyzes them. Subsequently, the visualization analysis of quantitative data was realized by using Excel, and a strong artificial intelligence language pattern was proposed by combining natural language processing and pragmatics theory. Finally, a complete Python-based natural language processing was realized, which provided a possible idea of text analysis for researchers in the field of human-computer dialogue in artificial intelligence.
+
+Key words: Python3.7; Natural language processing; Visual analysis; Man-machine dialogue; Pragmatics;
+
+1. Background and significance of the topic
+
+During the 13th Five-Year Plan period, China unveiled the Development Plan for the New Generation of Artificial Intelligence, which describes three major development stages and sets the goal of making China the world's leading innovation center for artificial intelligence by 2030.
+
+The key to achieve strong artificial intelligence human-computer dialogue is to understand and process natural language, but to achieve this goal, in addition to the support of corpus data, artificial intelligence also needs to have the ability of emotional communication. According to the information interaction theory of communication science, content communication between people only accounts for about 20%, while emotional communication accounts for 80%. Therefore, how to deeply understand the context and carry out appropriate emotional communication is the focus of the field of human-computer dialogue. There have been many researches on English natural language processing based on Python, but the corpus text is mostly from the network [1]. In the field of human-computer dialogue in science fiction literature, there is no mature research at present.
+
+In this context, this paper will take the human-computer dialogue in literary texts as the corpus, analyze the human-computer dialogue in literary works based on the natural language processing function of Python, and combine the theory of pragmics, so as to integrate a strong artificial intelligence language model.
+
+2 Python natural language processing requirements analysis
+
+There are two key steps in the natural language processing of human-computer dialogue in science fiction literature. One is to read the text and make relevant statistics; the other is to analyze its content.
+
+As for the first part, considering that the target is text analysis, jieba library, which is already relatively mature in the field of natural language processing, is selected. The basic programming idea is to use the rich methods built-in in jieba library, such as lcut function, to carry out a series of related processing such as word segmentation and word frequency statistics. In the specific reading process, the list and dictionary functions of Python can be used to transfer the text content [2].
+
+For the second part, considering that the Snow NLP and NLTK libraries are not equipped to handle large amounts of complex English language Text, this article chooses the Text Blob library that is more common in English-speaking countries [3]. After the statistics are completed, this paper will analyze the data of the original text on the basis of the operation results, and define two new scores, namely "politeness value" and "cooperation value", based on the emotional scores and subjective and objective scores of the literary text content (go to the next page).
+
+3 Key code description and code test
+
+3.1 Introduction to third-party Libraries
+
+As mentioned above, the most important part of this paper is Text processing, and in the process of implementing the requirements, two third-party Python libraries, namely jieba library and Text Blob library, will be mainly called. This part will briefly describe the functions of these two libraries and their specific functions in this project. The third-party library name and application called by the code in this part:
+
+(1)jieba library: To implement word segmentation and count the word frequency of the original text
+
+jieba Library is an excellent third-party Python word segmentation database that supports three word segmentation modes. The Jieba library has simple functions and is easy to use.
+
+(2)Text Blob library: Statistical analysis of text content emotional propensity score
+
+Text Blob is an open source text processing library written in Python that can be used to perform many natural language processing tasks, such as phrase extraction, word tagging, sentiment analysis, syntax analysis, sentiment analysis and adding new language models, etc. [4].
+
+3.2 Code Design
+
+This section covers the two main parts of the code, whose functions are word frequency statistics and text sentiment analysis. Due to space constraints, this section covers only the important code and programming ideas, and some of the code will be omitted.
+
+The following def code (lines 1-25) function is to count the word frequency, in the specific implementation process, jieba library [5] is called, then simply use the cut method to set the word stop and use the list function to count the word frequency, the output file of this part of the code will be a Text document with the word frequency. Lines 26-30 of code will have the function of analyzing content polarity (positive/negative degree of Emotion) and Subjectivity and objectivity of text. They are respectively defined as "Emotion" and "subjectivity" in the code. The purpose of this code is to briefly illustrate the important sentiment and polarity methods in the Text Blob library.
+
+4. Visual analysis of data
+
+4.1 Analysis data of human-machine dialogue in science fiction
+
+Based on the source Text emotion score and subjective and objective degree score obtained from Python's Text Blob library, this part analyzes the answers made by AI in science fiction literature, Siri, the assistant of i Phone, and Cleverbot in the same dialogue respectively. In order to make the data more intuitive, this part selects 30 representative questions in science fiction literature texts, and uses artificial intelligence Siri and Cleverbot to answer them respectively. In combination with human-computer dialogue in science fiction literature, Excel is used for data visualization analysis.
+
+The results show that Siri and Cleverbot's emotional scores are distributed around two basic lines: -3.125 and 0 (with a maximum value of 10 and a minimum value of -10). That is, Siri takes the "avoidance strategy" when facing multiple questions, that is, it says it does not know the answer to the question, which is also a common strategy of existing artificial intelligence in human-machine conversation; By contrast, Cleverbot tries to answer questions with absolute intelligence and as little emotion as possible. In contrast, the AI in science fiction tries to be as close to the emotional inclinations of the speaker as possible.
+
+A similar conclusion can be drawn on scores of subject-objective degree, that is, AI in science fiction literature tries to be consistent with the subject-objective degree of source questions, while scores of Siri and Cleverbot are still distributed around two basic lines: 6.875 and 0 (maximum value is 10 and minimum value is 0). Siri's answers are more subjective, whereas Cleverbot tries to be perfectly objective. This also has to do with the positioning of the two AI models: Siri is marketed as a "personal office assistant"; Cleverbot is a bot for intelligent conversation. Siri's answers will be made more "personal" with "personalised help for my Phone users", while Cleverbot has adopted "sensible answers".
+
+4.2 Politeness value and cooperation value
+
+By referring to the data analysis results in the previous part, the average scores of the four analysis contents can be obtained:
+
+As shown in the table above, there is no significant difference between the average scores of emotional content of the four contents. Although it is possible to judge the obvious differences between Siri and Cleverbot from subjective and objective scores, it is difficult to use the average scores only because of the different source questions. Therefore, this project uses two self-defined scoring items, namely, cooperation value "C" and politeness value "P", which are defined as follows:

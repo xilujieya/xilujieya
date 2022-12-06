@@ -1,0 +1,49 @@
+With the development of big data, hospital management has increased the demand for data, and hospital statistical work is facing new challenges. In order to complete statistical tasks in a timely manner, statisticians need to enhance their own statistical capabilities, including the application of new data processing software, and display data in various forms such as reports and charts from multiple perspectives such as departments, time and physicians [1]. According to the requirements of performance appraisal and DRG point payment reform of third-level public hospitals, the hospital has formulated the relevant cost index control target.
+
+The hospital cost index is divided into outpatient cost index and inpatient cost index. Statisticians perform summary calculation and format adjustment in the newly created Excel every month. These traditional data processing methods have the characteristics of multiple manual operations and low efficiency. Ye Yunshao et al. believed that no matter directly performing summary calculation and format adjustment in Excel or using statistical software to output rough data and then format adjustment, it was undoubtedly repetitive manual labor [2]. As a professional script editing language, Python has the characteristics of powerful, simple and universal operation. Importing the results into pre-designed report templates with the Python language greatly improves productivity.
+
+1. Introduction to Python
+
+Python has become one of the most popular programming languages. Python usage has grown linearly since 2004. Due to the simplicity, legibility and expansibility of the Python language, more and more research institutions are using Python to do scientific calculations abroad, and some well-known universities have adopted python to teach programming courses. Python is easy to learn, easy to read, easy to maintain, has a rich standard library, has interactive mode support, is portable, extensible, provides an interface to all databases, and is embeddable. This enables Python to be applied to software development, big data analysis, web crawler, machine learning, website development and other fields [3].
+
+2. Python use steps
+
+This paper introduces the application of Python in hospital statistics by taking hospital cost index as an example. The main program in turn to complete three functions, respectively: check the total cost of medical records statistics management system; Calculation of various cost indicators; Import the calculated cost index into the cost template.
+
+2.1 Check the total expenses of patients in the medical record statistics management system
+
+At present, the statistical management system of medical records is a subsystem of HIS system, which mainly includes outpatient data, human data, inpatient medical record first page data and medical technology data. Among them, the inpatient medical record first page data are the most widely used, such as the performance assessment of national third-level public hospitals, medical quality performance analysis, medical insurance advance payment, etc. The medical record first page data are imported from the electronic medical record system. Data quality control before data analysis is an essential step, which also meets the requirements of statistical law on the accuracy of statistical data. In order to ensure the accuracy of the total cost of the first page of medical records in the medical records statistical management system, the data in the system was compared with the total cost of discharged patients in the hospital charge system.
+
+The total cost of discharged patients in a certain month was exported from the medical record statistics management system, named as "File 1" by Excel. Meanwhile, the total cost of discharged patients in the same period was exported from the hospital charge system, named as "file 2" by Excel. The two files also contain fields: hospitalization number, name, discharge date and total cost. The two indexes of "hospitalization number" + "discharge date" were used to determine the uniqueness of the patient, and the total cost difference between the two systems for the same patient was compared. If the difference between the two systems was greater than or equal to 1 yuan, the patient's cost information was considered to be wrong, and it was required to enter the electronic medical record system and the hospitalization charge system for inquiry and correction.
+
+The specific procedures are as follows:
+
+2.2 Calculation of various cost indicators
+
+The report template of average hospitalization expenses was made in Excel, and the table name was: Report of average hospitalization expenses of patients in ** months of *****.
+
+2.3 Import the calculated cost index into the cost template
+
+Enter "(discharge date greater than or equal to April 01, 2021) and (discharge date less than or equal to April 30, 2021)" in the "Query Condition Input" module of the United Medical Records Statistical Management system. Select "Medical record number, patient number, department director, total cost, Western medicine, traditional Chinese medicine, consumables, surgical treatment cost, pathological diagnosis cost, laboratory diagnosis cost, imaging diagnosis cost, hospital stay days" from "Output item Setting". Perform combination analysis on the query results. In the data column, select "Department Director" as the priority field; in the calculation column, select "Discharge number, total cost, Western medicine, traditional Chinese medicine, consumables, surgical treatment cost, inspection fee, average length of stay" as the priority field. The analysis results were saved as an Excel file named "Report of Average hospitalization Expenses of patients in ** months of **** - Export of Medical record Statistics Management System".
+
+The data_all table is a self-designed indicator template, and the data table is the sum of all cost indicators of each medical group exported from the medical record statistics system
+
+Step 3 Discuss
+
+This paper introduces the application of Python in the output of statistical report, and gives the comparison of multiple system data and the procedure of making the report of the average cost of hospitalization of patients.
+
+With the reform of medical insurance payment method and the implementation of performance appraisal of national tertiary public hospitals, the breadth and accuracy of hospital data analysis are also facing new requirements. Song Hui et al. regarded proficiency in Python as one of the software application abilities of hospital statisticians [4]. Hospital statisticians learn to use advanced data analysis software to ensure timely and accurate completion of various statistical tasks in the era of big data. Only by manual data adjustment and table formulation, has been unable to meet the needs of the current stage of statistical work, and the calculation of some statistical indicators according to the traditional way has been unable to complete, only by writing the design ideas into the program, in order to quickly and accurately calculate the value of statistical indicators.
+
+Under the new form of medical reform, with the continuous improvement of hospital informatization, hospital statistics has put forward higher requirements for the quality of hospital statisticians [5]. Only by constantly improving their working methods, statisticians can meet the needs of hospital fine management.
+
+References
+
+[1] Huang Yue, Wei LAN, Zhang Dong, et al. Construction and application of hospital information integration platform based on big data [J]. Chinese Medical Equipment, 2019,16(4):103-105. (in Chinese)
+
+[2] Ye Yunshao, Huang Xuehuan, Han Dong. R language in custom excel | report [j. Chinese hospital statistics, 2020.4 (27) : 184-192.
+
+[3] WANG Zheng. python from Entry to Master (1st edition) [M]. Beijing: China Railway Publishing House Co., LTD., 2020:2-3.
+
+[4] Song H, Zhao M, Zhou J, et al. Analysis of the current situation and related factors of statisticians' ability in tertiary general hospitals based on big data [J]. Chin J Medical History, 2021,22(4).20-23.
+
+[5] Shi Wenzong, Liu Ruiji, Yang Yi, Discussion on the management mode of hospital statistics under the new situation of medical reform [J]. Statistics of Chinese Hospitals, 2020,27(2):153-160.
